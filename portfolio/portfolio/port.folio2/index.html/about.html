@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Section</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1d1f21, #323437);
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .about-container {
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 50%;
+      border: 4px solid #ff6bcb;
+      transition: transform 0.4s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .about-text h1 {
+      font-size: 2.5rem;
+      margin: 0 0 15px;
+      background: linear-gradient(90deg, #ff6bcb, #845ec2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .skills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background: #ff6bcb;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 107, 203, 0.5);
+    }
+
+    /* Floating animation */
+    .floating {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      background: #845ec2;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Typing animation */
+    .typing {
+      border-right: 3px solid #ff6bcb;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+</head>
+<body>
+  <div class="about-container">
+    <div class="about-image">
+      <img src="C:\Users\Kaushalyaduvanshi\OneDrive\Desktop\portfolio\portfolio\port.folio2\images\portfolio img.jpg" alt="Profile Picture">
+      
+    </div>
+    <div class="about-text">
+      <h1 class="typing">Hi, I'm KAUSHAL 🚀</h1>
+      <p>
+        I'm a passionate <strong>Web Developer</strong> who loves crafting interactive experiences.
+        I specialize in building responsive, user-friendly, and aesthetic web applications.
+      </p>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+      </div>
+    </div>
+    <div class="floating">✨ SKILLS ✨</div>
+  </div>
+
+  <script>
+    // Interactive hover skill effect
+    const skills = document.querySelectorAll('.skill');
+    skills.forEach(skill => {
+      skill.addEventListener('click', () => {
+        alert(`You clicked on ${skill.textContent}!`);
+      });
+    });
+  </script>
+</body>
+</html>
